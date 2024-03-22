@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CaptchaUIDemo</string>
+
+    <string name="show_captcha">Show Captcha</string>
+</resources>

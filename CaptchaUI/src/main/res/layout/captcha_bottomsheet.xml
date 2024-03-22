@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/windowBackground"
+    android:paddingBottom="16dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/captcha_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        android:text="@string/captcha_header"
+        android:textColor="@color/black"
+        app:fontFamily="@font/roboto" />
+
+    <View
+        android:id="@+id/captcha_header_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/captcha_header"
+        android:background="@color/captchaBackgroundColor" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/captcha_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/captcha_header_divider"
+        android:padding="10dp"
+        android:text="@string/captcha_description"
+        app:fontFamily="@font/roboto" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/captcha_verification_code_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/captcha_description"
+        android:layout_marginStart="10dp"
+        android:text="@string/captcha_verification_code_prompt"
+        app:fontFamily="@font/roboto" />
+
+    <com.appixon.captchaui.CaptchaView
+        android:id="@+id/captcha_view"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/captcha_description"
+        android:layout_toEndOf="@id/captcha_verification_code_prompt" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/captcha_input_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/captcha_view"
+        android:padding="10dp"
+        android:text="@string/captcha_input_message"
+        app:fontFamily="@font/roboto" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/captcha_input"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/captcha_input_prompt"
+        android:layout_marginHorizontal="16dp"
+        android:fontFamily="@font/roboto_medium"
+        android:imeOptions="actionDone"
+        android:inputType="textNoSuggestions|textCapCharacters"
+        android:padding="10dp" />
+
+    <View
+        android:id="@+id/captcha_footer_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/captcha_input"
+        android:layout_marginTop="16dp"
+        android:background="@color/captchaBackgroundColor" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/captcha_negative_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/captcha_footer_divider"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/bg_captcha_edittext"
+        android:backgroundTint="@color/captchaBackgroundColor"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/roboto_medium"
+        android:foreground="@drawable/click_ripple"
+        android:text="@android:string/cancel"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/captcha_positive_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/captcha_footer_divider"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/bg_captcha_edittext"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/roboto_medium"
+        android:foreground="@drawable/click_ripple"
+        android:text="@android:string/ok"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+</RelativeLayout>
